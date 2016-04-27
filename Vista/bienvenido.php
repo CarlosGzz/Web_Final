@@ -4,7 +4,7 @@
 </head>
 <body>
 
-	<h1>Bienvenido a huevo</h1>
+	<h1>Bienvenidos a web</h1>
 
 </body>
 </html>
