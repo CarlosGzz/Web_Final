@@ -3,10 +3,10 @@
 	class conexion{
 
 		private $conexion ;
-		private $server = "localhost";
-		private $username = "root";
-		private $password = "kobyjzt";
-		private $dbname = "UnidasBD";
+		private $server = "us-cdbr-iron-east-03.cleardb.net";
+		private $username = "b0cd0f01775543";
+		private $password = "b5e22ee3";
+		private $dbname = "heroku_513fc836dde6412";
 		private $user;
 		private $pass;
 
