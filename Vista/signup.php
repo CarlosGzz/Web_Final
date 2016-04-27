@@ -1,5 +1,5 @@
 <?php
-	require "MODEL/connect.php";
+	require "../Modelo/connect.php";
 
 ?>
 <html>
