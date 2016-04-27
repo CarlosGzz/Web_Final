@@ -6,8 +6,8 @@
     "type": "library",
     "authors": [
         {
-            "name": "David Zuelke",
-            "email": "dz@heroku.com"
+            "name": "Carlos Gonzalez"",
+            "email": "carlos.gonzalezd@udem.edu"
         }
     ],
     "bin": [
@@ -16,3 +16,4 @@
         "bin/heroku-php-apache2",
         "bin/heroku-php-nginx"
     ]
+}
