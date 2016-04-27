@@ -1,6 +1,6 @@
 <?php
 	require "../Modelo/connect.php";
-	echo "1";
+	echo '$_POST["correo"];'
 	if(!empty($_POST)){
 		echo "2";
 		if(!empty($_POST['correo'])){
