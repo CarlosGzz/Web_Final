@@ -1,5 +1,24 @@
 <?php
 	require "../Modelo/connect.php";
+	if(!empty($_POST)){
+		if(!empty($_POST['correo'])){
+			$Nombre = $_POST["nombre"];
+			$Apellido = $_POST["apellido"];
+			$Correo = $_POST["correo"];
+			$Contraseña = $_POST["contrasena"];
+
+			$sql = "INSERT INTO Organizadores 
+					(correo, contra, nombre, apellido, estado)
+					VALUES 
+					('$Correo', '$Contraseña', '$Nombre', '$Apellido', '0')";
+			if ($db->query($sql) === TRUE) {
+				echo "<script> alert('Nuevo Usuario Creado Exitosamente')</script>";
+			} else {
+				echo "Error: " . $sql . "<br>" . $db->error;
+			}	
+			$db->close();
+		}
+	}
 
 ?>
 <html>
@@ -34,15 +53,15 @@
 
 		<!-- FORM -->
 		<div class="row">
-		    <form class="col s12">
+		    <form action="signup.php" class="col s12">
 			    <div class="row">
 			        <div class="input-field col s6">
-			          	<input id="first_name" type="text" class="validate">
-			          	<label for="first_name">Nombre</label>
+			          	<input id="nombre" type="text" class="validate">
+			          	<label for="nombre">Nombre</label>
 			        </div>
 			        <div class="input-field col s6">
-			          	<input id="last_name" type="text" class="validate">
-			          	<label for="last_name">Apellido</label>
+			          	<input id="apellido" type="text" class="validate">
+			          	<label for="apellido">Apellido</label>
 			        </div>
 			    </div>
 			    <div class="row">
@@ -53,14 +72,14 @@
 			    </div>
 			    <div class="row">
 			    	<div class="input-field col s12">
-			    		<input id="password" type="password" class="validate">
-			    		<label for="password">Contraseña</label>
+			    		<input id="contrasena" type="password" class="validate">
+			    		<label for="contrasena">Contraseña</label>
 			        </div>
 			   	</div>
 			   	<div class="row">
 			    	<div class="input-field col s12">
-			    		<input id="passwordConfirm" type="password" class="validate">
-			    		<label for="passwordConfirm">Confirmar Contraseña</label>
+			    		<input id="contrasenaConfirmar" type="password" class="validate">
+			    		<label for="contrasenaConfirmar">Confirmar Contraseña</label>
 			        </div>
 			   	</div>
 			    <div class="row">
