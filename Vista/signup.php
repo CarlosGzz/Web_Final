@@ -1,10 +1,7 @@
 <?php
 	require "../Modelo/connect.php";
-	echo $_POST["correo"];
 	if(!empty($_POST)){
-		echo "2";
 		if(!empty($_POST['correo'])){
-			echo "3";
 			$Nombre = $_POST["nombre"];
 			$Apellido = $_POST["apellido"];
 			$Correo = $_POST["correo"];
