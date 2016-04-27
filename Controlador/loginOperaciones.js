@@ -7,7 +7,7 @@ $( document ).ready(function() {
    
       	if(userx != '' && passx != ''){
           $.ajax({
-       		url: '../unidasweb2/Controlador/login.php',
+       		url: '../Web_final/Controlador/login.php',
          	method: 'POST',
           	data: {user: userx, pass: passx},
           	success: function(msg){
