@@ -59,29 +59,29 @@
 		    <form action="signup.php" method="post" class="col s12">
 			    <div class="row">
 			        <div class="input-field col s6">
-			          	<input id="nombre" type="text" class="validate">
+			          	<input id="nombre" name="nombre" type="text" class="validate">
 			          	<label for="nombre">Nombre</label>
 			        </div>
 			        <div class="input-field col s6">
-			          	<input id="apellido" type="text" class="validate">
+			          	<input id="apellido" name="apellido" type="text" class="validate">
 			          	<label for="apellido">Apellido</label>
 			        </div>
 			    </div>
 			    <div class="row">
 			    	<div class="input-field col s12">
-			    		<input id="correo" type="email" class="validate">
+			    		<input id="correo" name="correo" type="email" class="validate">
 			    		<label for="correo">Correo</label>
 			        </div>
 			    </div>
 			    <div class="row">
 			    	<div class="input-field col s12">
-			    		<input id="contrasena" type="password" class="validate">
+			    		<input id="contrasena" name="contrasena" type="password" class="validate">
 			    		<label for="contrasena">Contraseña</label>
 			        </div>
 			   	</div>
 			   	<div class="row">
 			    	<div class="input-field col s12">
-			    		<input id="contrasenaConfirmar" type="password" class="validate">
+			    		<input id="contrasenaConfirmar" name="contrasenaConfirmar" type="password" class="validate">
 			    		<label for="contrasenaConfirmar">Confirmar Contraseña</label>
 			        </div>
 			   	</div>
