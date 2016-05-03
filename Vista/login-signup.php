@@ -53,11 +53,12 @@
         <div class="col s10 offset-s1">
           <div class="card white darken-1">
             <div class="card-content gray-text">
-              <span class="card-title" id="titulo">Login</span>
-              	<!-- FORM -->
+            <span class="card-title" id="titulo">Login</span>
+            <!-- FORM -->
 				<div class="row" id="form">
-				    <div id="mensaje"></div>
-				    <div  class="col s12">
+					<!--Login Html-->
+				   <div  class="col s12" id="loginForm">
+				   	<div id="mensaje"></div>
 					    <div class="row">
 				           	<div class="input-field col s12">
 				             	<input id="correo" type="email" class="validate"><!-- campor para ingresar el Email -->
@@ -77,15 +78,53 @@
 				      	  		</button>
 				            </div>
 				   		</div>
-				    </div>
-				    <!-- login controller-->
-					<script type="text/javascript" src="../Controlador/loginOperaciones.js"></script>
+				   </div>
+				   <!--/Login Html-->
+				   <!--Signup Html-->
+					<form action="login-signup.php"  method="post" class="col s12" style="display:none;" id="signupForm">
+					   <div class="row">
+					      <div class="input-field col s6">
+					      	<input id="nombre" name="nombre" type="text" class="validate" required>
+					         <label for="nombre">Nombre</label>
+					      </div>
+					      <div class="input-field col s6">
+					      	<input id="apellido" name="apellido" type="text" class="validate" required>
+					      	<label for="apellido">Apellido</label>
+					      </div>
+					   </div>
+					   <div class="row">
+					   	<div class="input-field col s12">
+					   		<input id="correo" name="correo" type="email" class="validate" required>
+					   		<label for="correo">Correo</label>
+					    	</div>
+					   </div>
+					   <div class="row">
+					    	<div class="input-field col s12">
+					    		<input id="contrasena" name="contrasena" type="password" class="validate" required>
+					    		<label for="contrasena">Contraseña</label>
+					    	</div>
+					   </div>
+					   	<div class="row">
+					    	<div class="input-field col s12">
+					    		<input id="contrasenaConfirmar" name="contrasenaConfirmar" type="password" class="validate" required>
+					    		<label for="contrasenaConfirmar">Confirmar Contraseña</label>
+					    	</div>
+					   </div>
+					   <div class="row">
+					   	<div class="input-field col s4">
+					   		<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+					   			<i class="material-icons right">send</i>
+								</button>
+							</div>
+					   </div>
+				   </form>
+				   <!--/Signup Html-->
 			  	</div>
 			  	<!-- /FORM -->
 			  	<div class="card-action">
 	              Ya tienes cuenta <a href="#" id="login">Login</a>
 	              Eres Nuevo <a href="#" id="signup">Signup</a>
-	            </div>
+	         </div>
           </div>
         </div>
       </div>
@@ -98,5 +137,7 @@
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"> </script>
   	<!-- signinLogin Controller -->
 	<script type="text/javascript" src="../Controlador/signinLoginController.js"></script>
+	<!-- login controller-->
+	<script type="text/javascript" src="../Controlador/loginOperaciones.js"></script>
 </body>
 </html>

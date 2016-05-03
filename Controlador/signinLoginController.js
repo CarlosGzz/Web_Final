@@ -1,11 +1,13 @@
 $( document ).ready(function() {
 	$("#login").click(function(){
-	    $("#form").load("login.html")
+		$("#signupForm").hide()
+	    $("#loginForm").show()
 	    $("#titulo").replaceWith('<span class="card-title" id="titulo">Login</span>');
 	});
 
 	$("#signup").click(function(){
-	    $("#form").load("signup.html")
+		$("#loginForm").hide()
+	    $("#signupForm").show()
 	    $("#titulo").replaceWith('<span class="card-title" id="titulo">Signup</span>');
 	});
 });
