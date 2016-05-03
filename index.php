@@ -5,7 +5,7 @@
 <body>
 
 	<h1>Index</h1>
-	<a href="bienvenido.php">Link</a>
+	<a href="Vista/login-signup.php">Link</a>
 
 </body>
 </html>

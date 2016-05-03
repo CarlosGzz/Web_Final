@@ -32,29 +32,24 @@
 			$this->user = $user;
 			$this->pass = $pass;
 
-			$query = "SELECT username, contrasena, nombre, apellido, authorizado 
-					  FROM Usuarios 
-					  WHERE username= '".$this->user."' and contrasena='".$this->pass."' and prefijo='admin'";
-
+			$query = "SELECT correo, nombre, apellido, estado 
+					  	FROM organizadores 
+					  	WHERE correo='".$this->user."' and contra='".$this->pass."'";
 			
 			$consulta = $this->conexion->query($query);
+
 			if($row = mysqli_fetch_array($consulta)){
-				if($row['authorizado']==1){
 					session_start(); 
 
 					$_SESSION['validacion'] = 1 ; 
-					$_SESSION['user']= $row['username'];
+					$_SESSION['correo']= $row['correo'];
 					$_SESSION['nom']= $row['nombre'];
 					$_SESSION['ape']= $row['apellido'];
+					$_SESSION['estado']= $row['estado'];
 
-					echo "../unidasweb2/Vista/Eventos.php";
-
-				}else{
 					echo "2";
-				}
 
 			} else {
-
 				session_start();
 				$_SESSION['validacion']=0;
 				echo "1";
