@@ -46,6 +46,7 @@
 					$_SESSION['nom']= $row['nombre'];
 					$_SESSION['ape']= $row['apellido'];
 					$_SESSION['estado']= $row['estado'];
+					$_SESSION['img'] = $row['nombre']+ (substr($row['correo'], 0, strpos($row['correo'], "@")));
 
 					echo "2";
 
