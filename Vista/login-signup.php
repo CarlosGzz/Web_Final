@@ -57,7 +57,7 @@
             <!-- FORM -->
 				<div class="row" id="form">
 					<!--Login Html-->
-				   <div  class="col s12" id="loginForm">
+					<form action="login-signup.php"  method="post" class="col s12" style="display:none;" id="loginForm">
 				   	<div id="mensaje"></div>
 					    <div class="row">
 				           	<div class="input-field col s12">
@@ -78,7 +78,7 @@
 				      	  		</button>
 				            </div>
 				   		</div>
-				   </div>
+				   </form>
 				   <!--/Login Html-->
 				   <!--Signup Html-->
 					<form action="login-signup.php"  method="post" class="col s12" style="display:none;" id="signupForm">
@@ -134,7 +134,7 @@
 	<!-- Compiled and minified Jquery -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<!-- Compiled and minified JavaScript -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"> </script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
   	<!-- signinLogin Controller -->
 	<script type="text/javascript" src="../Controlador/signinLoginController.js"></script>
 	<!-- login controller-->
