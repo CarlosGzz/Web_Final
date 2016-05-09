@@ -12,7 +12,7 @@
 	$consulta = $db->query($query);
 	$row = mysqli_fetch_array($consulta, MYSQL_ASSOC);
 	$idOrg = $row['id'];
-
+var_dump($idOrg);
 	$query = "SELECT * 
 		  	FROM relacionorganizadoreseventos 
 		  	WHERE organizadorId='$idOrg'";
@@ -50,7 +50,6 @@
 		unset($eventos[$key]['organizadorId']);
 	}
 var_dump($eventos);
-var_dump($_SESSION);
 ?>
 
 
