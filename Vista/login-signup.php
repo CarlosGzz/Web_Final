@@ -17,23 +17,23 @@
 					VALUES 
 					('$Correo', '$Contraseña', '$Nombre', '$Apellido', '0')";
 			if ($db->query($sql) === TRUE)
-			{var_dump("1");echo"<br><br>";
+			{
 				require_once "../Controlador/PHPMailerAutoload.php";
 				$mail = new PHPMailer;
 
 
-				$mail->isSMTP();                                      // Set mailer to use SMTP
-				$mail->Host = 'ssl://smtp.zoho.com';  // Specify main and backup SMTP servers
-				$mail->SMTPAuth = true;                               // Enable SMTP authentication
-				$mail->Username = 'no-responder@actstudio.mx';                 // SMTP username
-				$mail->Password = 'Zaragoza210a';                           // SMTP password
-				$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-				$mail->Port = 465;                                    // TCP port to connect to
+				$mail->isSMTP();
+				$mail->Host = 'ssl://smtp.zoho.com';
+				$mail->SMTPAuth = true;
+				$mail->Username = 'no-responder@actstudio.mx';
+				$mail->Password = 'Zaragoza210a';
+				$mail->SMTPSecure = 'ssl';also accepted
+				$mail->Port = 465;
 
 				$mail->setFrom('no-responder@actstudio.mx', 'Party Dog!');
-				$mail->addAddress($_POST["correo"]);   // Optional name
+				$mail->addAddress($_POST["correo"]);
 
-				$mail->isHTML(true);                                  // Set email format to HTML
+				$mail->isHTML(true);
 
 				$mail->Subject = 'Party Dog: Confirma tu correo.';
 				$mail->Body    = 'Confirma tu correo electrónico en: http://partydog.herokuapp.com/Controlador/confirmarCorreo.php?un='.$_POST["correo"];
@@ -44,43 +44,6 @@
 				} else {
 				    echo "<script>alert('Nuevo Usuario Creado Exitosamente. Se le envió un correo de confirmación.')</script>";
 				}
-
-
-var_dump("2");echo"<br><br>";
-				/*$from = 'no-responder@actstudio.mx';
-				$to = $_POST["correo"];
-				$subject = "Party Dog: Confirma tu correo.";
-				$body = 'Confirma tu correo electrónico en: http://partydog.herokuapp.com/Controlador/confirmarCorreo.php?un='.$_POST["correo"];
-				$host = "ssl://smtp.zoho.com";
-				$port = "465";
-				$username = "no-responder@actstudio.mx";
-				$password = "Zaragoza210a"; 
-				$headers = array (
-					'From' => $from,
-					'To' => $to,
-					'Subject' => $subject
-				);
-var_dump("3");echo"<br><br>";
-				$smtp = Mail::factory('smtp', array (
-					'host' => $host, 
-					'port' => $port,
-					'auth' => true,
-					'username' => $username,
-					'password' => $password
-				)); 
-var_dump("4");echo"<br><br>";
-				$mail = $smtp->send($to, $headers, $body); 
-var_dump("5");echo"<br><br>";
-				if (PEAR::isError($mail))
-				{
-var_dump("6");echo"<br><br>";
-					echo("<p>" . $mail->getMessage() . "</p>"); 
-				}
-				else
-				{
-var_dump("7");echo"<br><br>";
-					echo "<script>alert('Nuevo Usuario Creado Exitosamente. Se le envió un correo de confirmación.')</script>";
-				}*/
 			}
 			else
 			{
