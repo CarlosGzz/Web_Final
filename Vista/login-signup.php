@@ -42,12 +42,15 @@ var_dump("3");echo"<br><br>";
 				)); 
 var_dump("4");echo"<br><br>";
 				$mail = $smtp->send($to, $headers, $body); 
+var_dump("5");echo"<br><br>";
 				if (PEAR::isError($mail))
 				{
+var_dump("6");echo"<br><br>";
 					echo("<p>" . $mail->getMessage() . "</p>"); 
 				}
 				else
 				{
+var_dump("7");echo"<br><br>";
 					echo "<script>alert('Nuevo Usuario Creado Exitosamente. Se le envió un correo de confirmación.')</script>";
 				}
 			}
