@@ -6,8 +6,6 @@
 	if(!empty($_POST)){
 		if(!empty($_POST['correo']))
 		{
-			echo "hola";
-			echo $_POST['correo'];
 			$Nombre = $_POST["nombre"];
 			$Apellido = $_POST["apellido"];
 			$Correo = $_POST["correo"];
@@ -17,10 +15,10 @@
 					(correo, contra, nombre, apellido, estado)
 					VALUES 
 					('$Correo', '$Contraseña', '$Nombre', '$Apellido', '0')";
-			if ($db->query($sql) === TRUE) {
-				
+			if ($db->query($sql) === TRUE)
+				{var_dump("1");echo"<br><br>";
 				require_once "Mail.php";
-
+var_dump("2");echo"<br><br>";
 				$from = 'no-responder@actstudio.mx';
 				$to = $_POST["correo"];
 				$subject = "Party Dog: Confirma tu correo.";
