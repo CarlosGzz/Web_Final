@@ -3,7 +3,8 @@
 <?php
 
 	require "../Modelo/connect.php";
-	if(!empty($_POST)){
+	if(!empty($_POST))
+	{
 		if(!empty($_POST['correo']))
 		{
 			$Nombre = $_POST["nombre"];
@@ -16,7 +17,7 @@
 					VALUES 
 					('$Correo', '$Contraseña', '$Nombre', '$Apellido', '0')";
 			if ($db->query($sql) === TRUE)
-				{var_dump("1");echo"<br><br>";
+			{var_dump("1");echo"<br><br>";
 				require_once "../Controlador/PHPMailerAutoload.php";
 				$mail = new PHPMailer;
 
@@ -80,12 +81,12 @@ var_dump("6");echo"<br><br>";
 var_dump("7");echo"<br><br>";
 					echo "<script>alert('Nuevo Usuario Creado Exitosamente. Se le envió un correo de confirmación.')</script>";
 				}
-			}
+			}*/
 			else
 			{
 				//echo "Error: " . $sql . "<br>" . $db->error;
 				echo "<script> alert('Correo ya existente.')</script>";
-			}	*/
+			}	
 			$db->close();
 		}
 	}
