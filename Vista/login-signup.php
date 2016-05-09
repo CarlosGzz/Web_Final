@@ -17,7 +17,7 @@
 					('$Correo', '$Contraseña', '$Nombre', '$Apellido', '0')";
 			if ($db->query($sql) === TRUE)
 				{var_dump("1");echo"<br><br>";
-				require_once "Mail.php";
+				require_once "../Controlador/Mail.php";
 var_dump("2");echo"<br><br>";
 				$from = 'no-responder@actstudio.mx';
 				$to = $_POST["correo"];
@@ -32,6 +32,7 @@ var_dump("2");echo"<br><br>";
 					'To' => $to,
 					'Subject' => $subject
 				);
+var_dump("3");echo"<br><br>";
 				$smtp = Mail::factory('smtp', array (
 					'host' => $host, 
 					'port' => $port,
@@ -39,6 +40,7 @@ var_dump("2");echo"<br><br>";
 					'username' => $username,
 					'password' => $password
 				)); 
+var_dump("4");echo"<br><br>";
 				$mail = $smtp->send($to, $headers, $body); 
 				if (PEAR::isError($mail))
 				{

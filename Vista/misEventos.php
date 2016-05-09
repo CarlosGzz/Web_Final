@@ -12,11 +12,7 @@
 	$consulta = $db->query($query);
 	$row = mysqli_fetch_array($consulta);
 	$idOrg = $row['id'];
-var_dump($query);echo "<br>";
-var_dump($consulta);echo "<br>";
-var_dump($row);echo "<br>";
-var_dump($query);echo "<br>";
-var_dump($db);echo "<br>";
+	
 	$query = "SELECT * 
 		  	FROM relacionorganizadoreseventos 
 		  	WHERE organizadorId='$idOrg'";
