@@ -13,7 +13,7 @@
 			$Correo = $_POST["correo"];
 			$Contraseña = $_POST["contrasena"];
 
-			$sql = "INSERT INTO Organizadores 
+			$sql = "INSERT INTO organizadores 
 					(correo, contra, nombre, apellido, estado)
 					VALUES 
 					('$Correo', '$Contraseña', '$Nombre', '$Apellido', '0')";
