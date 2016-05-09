@@ -22,7 +22,7 @@
 				$from = 'no-responder@actstudio.mx';
 				$to = $_POST["correo"];
 				$subject = "Party Dog: Confirma tu correo.";
-				$body = 'Confirma tu correo electrónico en: http://localhost/Web_Final/Controlador/confirmarCorreo.php?un='.$_POST["correo"];
+				$body = 'Confirma tu correo electrónico en: http://partydog.herokuapp.com/Web_Final/Controlador/confirmarCorreo.php?un='.$_POST["correo"];
 				$host = "ssl://smtp.zoho.com";
 				$port = "465";
 				$username = "no-responder@actstudio.mx";

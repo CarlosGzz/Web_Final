@@ -100,7 +100,7 @@
 			$db->query($query);
 			$db->close();
 
-			header("Location: http://localhost/Web_Final/Vista/misEventos.php");
+			header("Location: http://partydog.herokuapp.com/Web_Final/Vista/misEventos.php");
 			die();
 		}
 	}

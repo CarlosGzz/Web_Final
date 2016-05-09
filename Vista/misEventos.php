@@ -101,14 +101,14 @@
 									<b>Clave de Acceso:</b><br>
 									<?php echo $evento['Eventos']['claveAcceso'] ?><br><br>
 									<b>Link:</b><br>
-									<a href="http://localhost/Web_Final/Vista/eventos.php?ca=<?php echo $evento['Eventos']['claveAcceso'] ?>">
-										http://localhost/Web_Final/Vista/eventos.php?ca=<?php echo $evento['Eventos']['claveAcceso'] ?>
+									<a href="http://partydog.herokuapp.com/Web_Final/Vista/eventos.php?ca=<?php echo $evento['Eventos']['claveAcceso'] ?>">
+										http://partydog.herokuapp.com/Web_Final/Vista/eventos.php?ca=<?php echo $evento['Eventos']['claveAcceso'] ?>
 									</a>
 								</p>
 								<div class="right" style="margin-top:7px;">
 									<a href=""><i class="material-icons">edit</i></a>
 									&nbsp;&nbsp;&nbsp;
-									<a href="http://localhost/Web_Final/Vista/eventos.php?ca=<?php echo $evento['Eventos']['claveAcceso'] ?>"><i class="material-icons">visibility</i></a>
+									<a href="http://partydog.herokuapp.com/Web_Final/Vista/eventos.php?ca=<?php echo $evento['Eventos']['claveAcceso'] ?>"><i class="material-icons">visibility</i></a>
 								</div>
 							</div>
 						</div>
