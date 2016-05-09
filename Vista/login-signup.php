@@ -27,7 +27,7 @@
 				$mail->SMTPAuth = true;
 				$mail->Username = 'no-responder@actstudio.mx';
 				$mail->Password = 'Zaragoza210a';
-				$mail->SMTPSecure = 'ssl';also accepted
+				$mail->SMTPSecure = 'ssl';
 				$mail->Port = 465;
 
 				$mail->setFrom('no-responder@actstudio.mx', 'Party Dog!');
