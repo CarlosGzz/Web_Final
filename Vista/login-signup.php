@@ -1,7 +1,11 @@
+
+
 <?php
+
 	require "../Modelo/connect.php";
 	if(!empty($_POST)){
-		if(!empty($_POST['correo'])){
+		if(!empty($_POST['correo']))
+		{
 			$Nombre = $_POST["nombre"];
 			$Apellido = $_POST["apellido"];
 			$Correo = $_POST["correo"];
@@ -12,14 +16,47 @@
 					VALUES 
 					('$Correo', '$Contraseña', '$Nombre', '$Apellido', '0')";
 			if ($db->query($sql) === TRUE) {
-				echo "<script> alert('Nuevo Usuario Creado Exitosamente')</script>";
-			} else {
-				echo "Error: " . $sql . "<br>" . $db->error;
+				
+				require_once "Mail.php";
+
+				$from = 'no-responder@actstudio.mx';
+				$to = $_POST["correo"];
+				$subject = "Party Dog: Confirma tu correo.";
+				$body = 'Confirma tu correo electrónico en: http://localhost/Web_Final/Controlador/confirmarCorreo.php?un='.$_POST["correo"];
+				$host = "ssl://smtp.zoho.com";
+				$port = "465";
+				$username = "no-responder@actstudio.mx";
+				$password = "Zaragoza210a"; 
+				$headers = array (
+					'From' => $from,
+					'To' => $to,
+					'Subject' => $subject
+				);
+				$smtp = Mail::factory('smtp', array (
+					'host' => $host, 
+					'port' => $port,
+					'auth' => true,
+					'username' => $username,
+					'password' => $password
+				)); 
+				$mail = $smtp->send($to, $headers, $body); 
+				if (PEAR::isError($mail))
+				{
+					echo("<p>" . $mail->getMessage() . "</p>"); 
+				}
+				else
+				{
+					echo "<script>alert('Nuevo Usuario Creado Exitosamente. Se le envió un correo de confirmación.')</script>";
+				}
+			}
+			else
+			{
+				//echo "Error: " . $sql . "<br>" . $db->error;
+				echo "<script> alert('Correo ya existente.')</script>";
 			}	
 			$db->close();
 		}
 	}
-
 ?>
 <html>
 <head>
@@ -31,21 +68,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- Compiled and minified CSS -->
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  	<link type="text/css" rel="stylesheet" href="css/rodo-style.css"/>
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 </head>
 <body>
-	<!-- NAVBAR -->
-	<nav>
-	    <div class="nav-wrapper">
-	      	<a href="#" class="brand-logo">Party DOG!</a>
-	      	<ul id="nav-mobile" class="right hide-on-med-and-down">
-	        	<li><a href="">Mis Eventos</a></li>
-	        	<li><a href="">Eventos</a></li>
-	        	<li><a href="">Amigos</a></li>
-	      	</ul>
-	    </div>
-  	</nav>
+
+	<?php require "layout.php"; ?>
+
   	<!-- /NAVBAR -->
   	<!-- BODY CONTENT-->
   	<div class="container">
@@ -131,10 +161,7 @@
       </div>
 	
 	<!-- /BODY CONTENT -->
-	<!-- Compiled and minified Jquery -->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<!-- Compiled and minified JavaScript -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"> </script>
+	
   	<!-- signinLogin Controller -->
 	<script type="text/javascript" src="../Controlador/signinLoginController.js"></script>
 	<!-- login controller-->

@@ -1,3 +1,12 @@
+
+
+<?php
+	
+	header("Location: http://localhost/Web_Final/Vista/login-signup.php");
+	die();
+
+?>
+
 <html>
 <head>
 	<title></title>

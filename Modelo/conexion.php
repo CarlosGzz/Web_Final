@@ -41,12 +41,10 @@
 			if($row = mysqli_fetch_array($consulta)){
 					session_start(); 
 
-					$_SESSION['validacion'] = 1 ; 
 					$_SESSION['correo']= $row['correo'];
-					$_SESSION['nom']= $row['nombre'];
-					$_SESSION['ape']= $row['apellido'];
+					$_SESSION['nombre']= $row['nombre'];
+					$_SESSION['apellido']= $row['apellido'];
 					$_SESSION['estado']= $row['estado'];
-					$_SESSION['img'] = $row['nombre']+ (substr($row['correo'], 0, strpos($row['correo'], "@")));
 
 					echo "2";
 

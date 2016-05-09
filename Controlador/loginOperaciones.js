@@ -13,7 +13,7 @@ $(document).ready(function() {
                   $('#mensaje').html('<div class="chip">Error: Usuario o Contraseña Incorrectas<i class="material-icons">close</i></div>');
                }
                if(msg=='2'){
-                  window.location = "../index.php"; 
+                  window.location = "../Vista/misEventos.php"; 
                }
             }
          });
