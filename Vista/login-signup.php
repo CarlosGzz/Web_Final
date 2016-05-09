@@ -17,9 +17,36 @@
 					('$Correo', '$Contraseña', '$Nombre', '$Apellido', '0')";
 			if ($db->query($sql) === TRUE)
 				{var_dump("1");echo"<br><br>";
-				require_once "../Controlador/Mail.php";
+				require_once "../Controlador/PHPMailerAutoload.php";
+				$mail = new PHPMailer;
+
+
+				$mail->isSMTP();                                      // Set mailer to use SMTP
+				$mail->Host = 'ssl://smtp.zoho.com';  // Specify main and backup SMTP servers
+				$mail->SMTPAuth = true;                               // Enable SMTP authentication
+				$mail->Username = 'no-responder@actstudio.mx';                 // SMTP username
+				$mail->Password = 'Zaragoza210a';                           // SMTP password
+				$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+				$mail->Port = 465;                                    // TCP port to connect to
+
+				$mail->setFrom('no-responder@actstudio.mx', 'Party Dog!');
+				$mail->addAddress($_POST["correo"]);   // Optional name
+
+				$mail->isHTML(true);                                  // Set email format to HTML
+
+				$mail->Subject = 'Party Dog: Confirma tu correo.';
+				$mail->Body    = 'Confirma tu correo electrónico en: http://partydog.herokuapp.com/Controlador/confirmarCorreo.php?un='.$_POST["correo"];
+
+				if(!$mail->send()) {
+				    echo 'Message could not be sent.';
+				    echo 'Mailer Error: ' . $mail->ErrorInfo;
+				} else {
+				    echo "<script>alert('Nuevo Usuario Creado Exitosamente. Se le envió un correo de confirmación.')</script>";
+				}
+
+
 var_dump("2");echo"<br><br>";
-				$from = 'no-responder@actstudio.mx';
+				/*$from = 'no-responder@actstudio.mx';
 				$to = $_POST["correo"];
 				$subject = "Party Dog: Confirma tu correo.";
 				$body = 'Confirma tu correo electrónico en: http://partydog.herokuapp.com/Controlador/confirmarCorreo.php?un='.$_POST["correo"];
@@ -58,7 +85,7 @@ var_dump("7");echo"<br><br>";
 			{
 				//echo "Error: " . $sql . "<br>" . $db->error;
 				echo "<script> alert('Correo ya existente.')</script>";
-			}	
+			}	*/
 			$db->close();
 		}
 	}
