@@ -80,8 +80,8 @@ var_dump("6");echo"<br><br>";
 				{
 var_dump("7");echo"<br><br>";
 					echo "<script>alert('Nuevo Usuario Creado Exitosamente. Se le envió un correo de confirmación.')</script>";
-				}
-			}*/
+				}*/
+			}
 			else
 			{
 				//echo "Error: " . $sql . "<br>" . $db->error;
