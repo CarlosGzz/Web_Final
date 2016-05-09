@@ -2,8 +2,8 @@
 <?php 
 	
 	@session_start();
-	if (empty($_SESSION['estado']) && $_SERVER["REQUEST_URI"] != "/Web_Final/Vista/login-signup.php") {
-		header("Location: http://partydog.herokuapp.com/Web_Final/Vista/login-signup.php");
+	if (empty($_SESSION['estado']) && $_SERVER["REQUEST_URI"] != "/Vista/login-signup.php") {
+		header("Location: http://partydog.herokuapp.com/Vista/login-signup.php");
 		die();
 	}
 

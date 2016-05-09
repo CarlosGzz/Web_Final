@@ -10,7 +10,7 @@
 				SET estado=1
 				WHERE correo='".$_GET['un']."';";
 		$db->query($sql);
-		header("Location: http://partydog.herokuapp.com/Web_Final/Vista/login-signup.php");
+		header("Location: http://partydog.herokuapp.com/Vista/login-signup.php");
       	exit();
    	}
 

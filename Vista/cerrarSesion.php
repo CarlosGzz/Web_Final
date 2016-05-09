@@ -4,7 +4,7 @@
 
 	session_start();
 	session_destroy();
-	header("Location: http://partydog.herokuapp.com/Web_Final/index.php");
+	header("Location: http://partydog.herokuapp.com/index.php");
 	die();
 
 ?>
