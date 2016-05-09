@@ -25,7 +25,7 @@ var_dump($db);echo "<br>";
 
 	$eventos = array();
 
-	for ($i=0; $row = mysqli_fetch_array($consulta, MYSQL_ASSOC); $i++)
+	for ($i=0; $row = mysqli_fetch_array($consulta); $i++)
 	{ 
 		$eventos[$row['id']] = $row;
 	}
@@ -38,7 +38,7 @@ var_dump($db);echo "<br>";
 			
 		$consulta = $db->query($query);
 
-		$eventos[$key]['Eventos'] = mysqli_fetch_array($consulta, MYSQL_ASSOC);
+		$eventos[$key]['Eventos'] = mysqli_fetch_array($consulta);
 
 
 		$query = "SELECT * 
@@ -47,7 +47,7 @@ var_dump($db);echo "<br>";
 			
 		$consulta = $db->query($query);
 
-		$eventos[$key]['Organizadores'] = mysqli_fetch_array($consulta, MYSQL_ASSOC);
+		$eventos[$key]['Organizadores'] = mysqli_fetch_array($consulta);
 
 		unset($eventos[$key]['id']);
 		unset($eventos[$key]['eventoId']);
