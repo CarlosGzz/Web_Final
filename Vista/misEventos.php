@@ -10,7 +10,7 @@
 		  	WHERE correo='".$_SESSION['correo']."' and nombre='".$_SESSION['nombre']."'";
 		
 	$consulta = $db->query($query);
-	$row = mysqli_fetch_array($consulta, MYSQL_ASSOC);
+	$row = mysqli_fetch_array($consulta);
 	$idOrg = $row['id'];
 var_dump($query);echo "<br>";
 var_dump($consulta);echo "<br>";
