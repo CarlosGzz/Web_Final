@@ -49,7 +49,8 @@
 		unset($eventos[$key]['eventoId']);
 		unset($eventos[$key]['organizadorId']);
 	}
-
+var_dump($eventos);
+var_dump($_SESSION);
 ?>
 
 
