@@ -6,6 +6,8 @@
 	if(!empty($_POST)){
 		if(!empty($_POST['correo']))
 		{
+			echo "hola";
+			echo $_POST['correo'];
 			$Nombre = $_POST["nombre"];
 			$Apellido = $_POST["apellido"];
 			$Correo = $_POST["correo"];
