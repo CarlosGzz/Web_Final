@@ -5,6 +5,22 @@
 	session_start();
 	require "../Modelo/connect.php";
 
+	$query = "SELECT nombre, id 
+		  	FROM articulos 
+		  	WHERE estado='1'
+		  	ORDER BY nombre";
+		
+	$consulta = $db->query($query);
+
+	$articulos = array();
+
+	for ($i=0; $row = mysqli_fetch_array($consulta); $i++)
+	{ 
+		$articulos[$row['id']] = $row;
+	}
+
+
+
 	if(!empty($_POST))
 	{
 		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -65,13 +81,8 @@
 		$row = mysqli_fetch_array($consulta);
 		$idOrg = $row['id'];
 
-		$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	    $charactersLength = strlen($characters);
-	    $randomString = '';
-	    for ($i = 0; $i < 20; $i++)
-	    {
-	        $randomString .= $characters[rand(0, $charactersLength - 1)];
-	    }
+		
+		require_once "../Controlador/claveAcceso.php";
 
 		$query = "INSERT INTO eventos 
 				(nombre, descripcion, direccion, fecha, claveAcceso, imagen)
@@ -100,6 +111,19 @@
 			$db->query($query);
 			$db->close();
 
+			foreach ($_POST['articulos'] as $key => $articulo)
+			{
+				if (!empty($articulo['nombre']))
+				{
+					$query = "INSERT INTO relacioneventosarticulos 
+							(eventoId, articuloId, limite) 
+							VALUES 
+							($id, $key, ".$articulo['cantidad'].")";
+
+					$db->query($query);
+				}
+			}
+
 			header("Location: http://partydog.herokuapp.com/Vista/misEventos.php");
 			die();
 		}
@@ -124,7 +148,7 @@
 
 	<?php require "layout.php"; ?>
 
-	<form action="crearEvento.php" method="post" id="crearEventoForm" enctype="multipart/form-data">
+	<form action="crearEvento.php" method="post" id="editarEventoForm" enctype="multipart/form-data">
 		<div class="container">
 
 			<h4>Crear Evento</h4>
@@ -178,7 +202,37 @@
 				</div>
 			</div>
 
+			<h4>Artículos a llevar</h4>
+			<br>
+
+
+			<?php foreach ($articulos as $key => $articulo): ?>
+
+				<div class="row">
+					<div class="col s3" style="height: 46px;">
+						<p>
+							<input type="checkbox" id="check<?php echo $key ?>" name="articulos[<?php echo $key ?>][nombre]" value="<?php echo $articulo['nombre'] ?>"/>
+		      				<label for="check<?php echo $key ?>"><?php echo $articulo['nombre'] ?></label>
+						</p>
+					</div>
+
+					<div class="col s2 hide" id="hide<?php echo $key ?>">
+						<input placeholder="Cantidad" id="cant<?php echo $key ?>" type="number" min="1" max="100" name="articulos[<?php echo $key ?>][cantidad]">
+					</div>
+				</div>
+
+			<?php endforeach ?>
+
+			<div class="row">
+				<div class="col s8">
+					<button id="agregarArea" class="right btn pink waves-effect waves-light" type="submit" name="action" style="margin-top:30px;">
+						Guardar evento
+					</button>
+				</div>
+			</div>
+
 		</div>
+
 	</form>
 
 
@@ -213,6 +267,23 @@
 
 			return listo;
 		});
+
+		<?php foreach ($articulos as $key => $articulo): ?>
+			
+			$("#check<?php echo $key ?>").on( "click", function(){
+
+				if ($('#check<?php echo $key ?>').is(':checked') )
+				{
+					$('#hide<?php echo $key ?>').removeClass('hide');
+				}
+				else
+				{
+					$('#hide<?php echo $key ?>').addClass('hide');
+				}
+
+			});
+
+		<?php endforeach ?>
 
 	</script>
 

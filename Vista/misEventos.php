@@ -49,7 +49,7 @@
 		unset($eventos[$key]['eventoId']);
 		unset($eventos[$key]['organizadorId']);
 	}
-	
+
 ?>
 
 
@@ -101,14 +101,14 @@
 									<b>Clave de Acceso:</b><br>
 									<?php echo $evento['Eventos']['claveAcceso'] ?><br><br>
 									<b>Link:</b><br>
-									<a href="http://partydog.herokuapp.com/Vista/eventos.php?ca=<?php echo $evento['Eventos']['claveAcceso'] ?>">
-										http://partydog.herokuapp.com/Vista/eventos.php?ca=<?php echo $evento['Eventos']['claveAcceso'] ?>
+									<a href="http://partydog.herokuapp.com/Vista/evento.php?el=<?php echo $evento['Eventos']['claveAcceso'] ?>">
+										http://partydog.herokuapp.com/Vista/evento.php?el=<?php echo $evento['Eventos']['claveAcceso'] ?>
 									</a>
 								</p>
 								<div class="right" style="margin-top:7px;">
-									<a href=""><i class="material-icons">edit</i></a>
+									<a href="http://partydog.herokuapp.com/Vista/editarEvento.php?el=<?php echo $evento['Eventos']['id'] ?>"><i class="material-icons">edit</i></a>
 									&nbsp;&nbsp;&nbsp;
-									<a href="http://partydog.herokuapp.com/Vista/eventos.php?ca=<?php echo $evento['Eventos']['claveAcceso'] ?>"><i class="material-icons">visibility</i></a>
+									<a href=""><i class="material-icons">visibility</i></a>
 								</div>
 							</div>
 						</div>

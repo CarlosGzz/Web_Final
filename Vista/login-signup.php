@@ -12,12 +12,12 @@
 			$Correo = $_POST["correo"];
 			$Contraseña = $_POST["contrasena"];
 
-			$sql = "INSERT INTO organizadores 
+			$sql = "INSERT INTO Organizadores 
 					(correo, contra, nombre, apellido, estado)
 					VALUES 
 					('$Correo', '$Contraseña', '$Nombre', '$Apellido', '0')";
 			if ($db->query($sql) === TRUE)
-			{
+			{				
 				require_once "../Controlador/PHPMailerAutoload.php";
 				$mail = new PHPMailer;
 

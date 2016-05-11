@@ -12,3 +12,21 @@
 .pink {
     background-color: #ee6e73 !important;
 }
+
+#listaArticulos li{
+	margin: 0px;
+	box-shadow: none;
+}
+
+#listaArticulos .collapsible-header{
+	border-bottom: none;
+	cursor: auto;
+}
+
+#editarEventoForm p{
+	margin-left: 20px;
+}
+
+#editarEventoForm input[type=number]{
+	margin-bottom: 0px;
+}
