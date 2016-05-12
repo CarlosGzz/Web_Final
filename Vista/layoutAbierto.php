@@ -10,6 +10,7 @@
             <?php
             	session_start();
              	if(!isset($_SESSION['idFacebook'])){
+                        echo "algo";
             			require '../facebookLogin/app.php';
             		}else{
             			echo "<!-- Dropdown Trigger -->
