@@ -7,13 +7,14 @@
 	// Include the required dependencies.
 	require_once __DIR__ . '/facebook-php-sdk-v4/src/Facebook/autoload.php';
 
-	echo "algooo mas";
 	// Initialize the Facebook PHP SDK v5.
 	$fb = new Facebook\Facebook([
 	  'app_id'                => '1811434202420337',
 	  'app_secret'            => 'd748e9975218195d19dc6404423879a1',
 	  'default_graph_version' => 'v2.3',
 	]);
+
+	echo "espero";
 
 	# Facebook PHP SDK v5: Check Login Status Example
  
@@ -27,7 +28,7 @@
 	 
 	// Get the user ID if signed request exists
 	$user = $sr ? $sr->getUserId() : null;
-	 
+	 echo "no aya";
 	if ( $user ) {
 	  try {
 	 
@@ -40,6 +41,7 @@
 	    exit;
 	  }
 	}
+	echo "errores ";
 	$helper = $fb->getRedirectLoginHelper();
 	$permissions = ['email']; // optional
 	$callback    = 'http://partydog.herokuapp.com/facebookLogin/login-callback.php';
