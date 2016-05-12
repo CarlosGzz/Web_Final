@@ -1,4 +1,5 @@
 <?php
+	echo "algooo";
 	// Pass session data over.
  	if(!session_id()) {
     	session_start();
