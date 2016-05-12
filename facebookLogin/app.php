@@ -41,7 +41,7 @@
 	}
 	$helper = $fb->getRedirectLoginHelper();
 	$permissions = ['email']; // optional
-	$callback    = 'partydog.herokuapp.com/facebookLogin/login-callback.php';
+	$callback    = 'http://partydog.herokuapp.com/facebookLogin/login-callback.php';
 	$loginUrl    = $helper->getLoginUrl($callback, $permissions);
 	echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 
