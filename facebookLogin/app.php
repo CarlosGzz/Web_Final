@@ -1,5 +1,4 @@
 <?php
-	echo "algooo";
 	// Pass session data over.
  	if(!session_id()) {
     	session_start();
@@ -8,7 +7,7 @@
 	// Include the required dependencies.
 	require_once __DIR__ . '/facebook-php-sdk-v4/src/Facebook/autoload.php';
 
-	
+	echo "algooo mas";
 	// Initialize the Facebook PHP SDK v5.
 	$fb = new Facebook\Facebook([
 	  'app_id'                => '1811434202420337',
