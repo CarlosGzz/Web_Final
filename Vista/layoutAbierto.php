@@ -1,16 +1,17 @@
-  	
+ <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
 <!-- NAVBAR -->
 <nav class="red" role="navigation">
     <div class="nav-wrapper container">
         <a href="login-signup.php" class="brand-logo">Party DOG!</a>
-        <a href="misEventos.php" class="brand-logo">Party DOG!</a>
         <ul class="right hide-on-med-and-down">
 
             <li><a  id="result" href="misEventos.php">Mis Eventos</a></li>
             <?php
             	session_start();
              	if(!isset($_SESSION['idFacebook'])){
-                        echo "algo";
+                        //echo "algo";
             			require '../facebookLogin/app.php';
             		}else{
             			echo "<!-- Dropdown Trigger -->
@@ -20,7 +21,6 @@
                               <ul id='logout' class='dropdown-content'>
                                 <li><a href='#'>logout</a></li>
                               </ul>";
-            			//echo '<img src="https://graph.facebook.com/'.$_SESSION['id'].'/picture?type=small">';
             		} 
             ?>
         </ul>
