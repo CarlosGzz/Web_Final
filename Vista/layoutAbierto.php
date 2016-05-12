@@ -12,7 +12,8 @@
             	session_start();
              	if(!isset($_SESSION['idFacebook'])){
                         //echo "algo";
-            			require '../facebooklogin/app.php';
+            			require '../facebookLogin/app.php';
+                        echo "que onda";
             		}else{
             			echo "<!-- Dropdown Trigger -->
                               <li><a class='dropdown-button' data-beloworigin='true' data-hover='true' data-constrain_width='true' href='#' data-activates='logout'>".$_SESSION['nombre']."</a></li>
