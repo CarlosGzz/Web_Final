@@ -34,7 +34,7 @@
 </head>
 <body>
 
-
+	<?php require "layoutAbierto.php"; ?>
 	<div class="parallax-container" style="margin-top:-100px;">
 		<div class="parallax"><img src="../Imagenes/<?php echo $evento['imagen'] ?>"></div>
 	</div>
@@ -59,8 +59,6 @@
 			Uniquely underwhelm multifunctional outsourcing via distinctive e-commerce. Quickly build interactive intellectual capital after leading-edge quality vectors. Credibly facilitate superior solutions vis-a-vis an expanded array of expertise. Globally impact top-line communities and professional value. Progressively architect orthogonal niche markets whereas optimal potentialities.
 		</p>
 	</div>
-
-	<?php require "layoutAbierto.php"; ?>
 
 
 
