@@ -10,9 +10,15 @@
             <?php
             	session_start();
              	if(!isset($_SESSION)){
-            			require '../facebooklogin/app.php';
+            			require '../facebookLogin/app.php';
             		}else{
-            			echo $_SESSION['nombre'];
+            			echo "<!-- Dropdown Trigger -->
+                              <li><a class='dropdown-button' data-beloworigin='true' data-hover='true' data-constrain_width='true' href='#' data-activates='logout'>".$_SESSION['nombre']."</a></li>
+
+                              <!-- Dropdown Structure -->
+                              <ul id='logout' class='dropdown-content'>
+                                <li><a href='#'>logout</a></li>
+                              </ul>";
             			//echo '<img src="https://graph.facebook.com/'.$_SESSION['id'].'/picture?type=small">';
             		} 
             ?>
