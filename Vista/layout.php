@@ -1,7 +1,5 @@
 
 <?php 
-
-	@session_start();
   echo $_SERVER["REQUEST_URI"];
 	//if (empty($_SESSION['estado']) && $_SERVER["REQUEST_URI"] != "/Vista/login-signup.php") {
 		//header("Location: login-signup.php");
@@ -15,10 +13,7 @@
 
 ?>
 
-<!-- Compiled and minified Jquery -->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<!-- Compiled and minified JavaScript -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"> </script>
+
   	
 <!-- NAVBAR -->
 <!--<nav class="red" style="margin-bottom:100px;" role="navigation">
