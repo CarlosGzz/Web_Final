@@ -9,7 +9,7 @@
             <li><a  id="result" href="misEventos.php">Mis Eventos</a></li>
             <?php
             	session_start();
-             	if(!isset($_SESSION)){
+             	if(!isset($_SESSION['idFacebook'])){
             			require '../facebookLogin/app.php';
             		}else{
             			echo "<!-- Dropdown Trigger -->
