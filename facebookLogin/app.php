@@ -14,7 +14,7 @@
 	  'default_graph_version' => 'v2.3',
 	]);
 
-	echo "espero";
+
 
 	# Facebook PHP SDK v5: Check Login Status Example
  
@@ -28,7 +28,6 @@
 	 
 	// Get the user ID if signed request exists
 	$user = $sr ? $sr->getUserId() : null;
-	 echo "no aya";
 	if ( $user ) {
 	  try {
 	 
@@ -41,11 +40,13 @@
 	    exit;
 	  }
 	}
-	echo "errores ";
+
 	$helper = $fb->getRedirectLoginHelper();
 	$permissions = ['email']; // optional
 	$callback    = 'http://partydog.herokuapp.com/facebookLogin/login-callback.php';
 	$loginUrl    = $helper->getLoginUrl($callback, $permissions);
+	echo "que pedo";
+
 	echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 
 	
