@@ -1,6 +1,6 @@
 
 <?php 
-  echo $_SERVER["REQUEST_URI"];
+  //echo $_SERVER["REQUEST_URI"];
 	//if (empty($_SESSION['estado']) && $_SERVER["REQUEST_URI"] != "/Vista/login-signup.php") {
 		//header("Location: login-signup.php");
 		//die();
