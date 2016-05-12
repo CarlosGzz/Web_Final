@@ -87,9 +87,9 @@
 	echo 'UserId'. $user['id'];
 	echo 'Name: ' . $user['name'];
 	echo 'Email: ' . $user['email'];
-	$_SESSION['id'] = $user['id'];
-	$_SESSION['nombre'] = $user['name'];
-	$_SESSION['correo'] = $user['email'];
+	$_SESSION['idFacebook'] = $user['id'];
+	$_SESSION['nombreFacebook'] = $user['name'];
+	$_SESSION['correoFacebook'] = $user['email'];
 	echo '<img src="https://graph.facebook.com/'.$user['id'].'/picture?type=large">';
 	require "../Modelo/connect.php";
 	$id = $user['id'];
