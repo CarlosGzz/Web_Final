@@ -1,8 +1,7 @@
 <?php
 	// Pass session data over.
-	if(!session_id()) {
-    	session_start();
-	}
+
+    session_start();
  
 	// Include the required dependencies.
 	require_once __DIR__ . '/facebook-php-sdk-v4/src/Facebook/autoload.php';

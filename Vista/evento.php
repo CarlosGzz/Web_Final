@@ -34,7 +34,6 @@
 </head>
 <body>
 
-	<?php require "layoutAbierto.php"; ?>
 
 	<div class="parallax-container" style="margin-top:-100px;">
 		<div class="parallax"><img src="../Imagenes/<?php echo $evento['imagen'] ?>"></div>
@@ -61,8 +60,8 @@
 		</p>
 	</div>
 
-	<!-- Compiled and minified JavaScript -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+	<?php require "layoutAbierto.php"; ?>
+
 
 
 	<script type="text/javascript">
