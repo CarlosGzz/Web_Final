@@ -45,6 +45,7 @@
 	#Facebook login with facebook button wit url 
 
 	$helper = $fb->getRedirectLoginHelper();
+	var_dump($helper);
 	$permissions = ['email']; // optional
 	$callback = 'http://localhost/~CarlosGzz/Web_Final/facebookLogin/login-callback.php';
 	$loginUrl = $helper->getLoginUrl($callback, $permissions);
