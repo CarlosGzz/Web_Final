@@ -22,8 +22,6 @@
  
 	// Choose your app context helper
 	$helper = $fb->getCanvasHelper();
-	//$helper = $fb->getPageTabHelper();
-	//$helper = $fb->getJavaScriptHelper();
 	 
 	// Grab the signed request entity
 	$sr = $helper->getSignedRequest();
@@ -44,10 +42,16 @@
 	}
 	echo "mataame";
 
+	#Facebook login with facebook button wit url 
+
 	$helper = $fb->getRedirectLoginHelper();
 	$permissions = ['email']; // optional
 	$callback = 'http://localhost/~CarlosGzz/Web_Final/facebookLogin/login-callback.php';
 	$loginUrl = $helper->getLoginUrl($callback, $permissions);
+
+	var_dump($loginUrl);
+	var_dump($helper);
+
 	echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 
 	echo "hola";
