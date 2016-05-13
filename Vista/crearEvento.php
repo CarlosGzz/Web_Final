@@ -275,10 +275,12 @@
 				if ($('#check<?php echo $key ?>').is(':checked') )
 				{
 					$('#hide<?php echo $key ?>').removeClass('hide');
+					$('#cant<?php echo $key ?>').attr('required', 'true');
 				}
 				else
 				{
 					$('#hide<?php echo $key ?>').addClass('hide');
+					$('#cant<?php echo $key ?>').removeAttr('required');
 				}
 
 			});

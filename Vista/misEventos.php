@@ -108,7 +108,7 @@
 								<div class="right" style="margin-top:7px;">
 									<a href="http://partydog.herokuapp.com/Vista/editarEvento.php?el=<?php echo $evento['Eventos']['id'] ?>"><i class="material-icons">edit</i></a>
 									&nbsp;&nbsp;&nbsp;
-									<a href=""><i class="material-icons">visibility</i></a>
+									<a href="http://partydog.herokuapp.com/Vista/verEvento.php?el=<?php echo $evento['Eventos']['id'] ?>"><i class="material-icons">visibility</i></a>
 								</div>
 							</div>
 						</div>

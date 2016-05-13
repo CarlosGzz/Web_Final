@@ -35,6 +35,22 @@
 		$consulta = $db->query($query);
 
 		$evento = mysqli_fetch_array($consulta);
+
+
+		$query = "SELECT * 
+			  	FROM relacioneventosarticulos 
+			  	WHERE eventoId='$id'";
+			
+		$consulta = $db->query($query);
+
+		$relArEv = array();
+		$cantidades = array();
+
+		for ($i=0; $row = mysqli_fetch_array($consulta); $i++)
+		{ 
+			array_push($relArEv, $row['articuloId']);
+			$cantidades[$row['articuloId']] = $row['limite'];
+		}
 	}
 
 
@@ -42,7 +58,7 @@
 
 //--Cuando carga con POST
 	if (!empty($_POST))
-	{var_dump($_POST);
+	{
 		if (!empty($_FILES['imagen']['name']))
 		{
 			require_once "../Controlador/claveAcceso.php";
@@ -104,6 +120,13 @@
 		$db->query($sql);
 
 
+		$sql = "DELETE 
+				FROM relacioneventosarticulos 
+				WHERE eventoId='".$id."';";
+
+		$db->query($sql);
+
+
 		foreach ($_POST['articulos'] as $key => $articulo)
 		{
 			if (!empty($articulo['nombre']))
@@ -121,7 +144,7 @@
 
 		$db->close();
 
-		header("Location: http://partydog.herokuapp.com/Vista/misEventos.php");
+		header("Location: http://localhost/Web_Final/Vista/misEventos.php");
 		die();
 	}
 ?>
@@ -222,13 +245,13 @@
 				<div class="row">
 					<div class="col s3" style="height: 46px;">
 						<p>
-							<input type="checkbox" id="check<?php echo $key ?>" name="articulos[<?php echo $key ?>][nombre]" value="<?php echo $articulo['nombre'] ?>"/>
+							<input <?php if (in_array($key, $relArEv)) echo "checked"; ?> type="checkbox" id="check<?php echo $key ?>" name="articulos[<?php echo $key ?>][nombre]" value="<?php echo $articulo['nombre'] ?>"/>
 		      				<label for="check<?php echo $key ?>"><?php echo $articulo['nombre'] ?></label>
 						</p>
 					</div>
 
-					<div class="col s2 hide" id="hide<?php echo $key ?>">
-						<input placeholder="Cantidad" id="cant<?php echo $key ?>" type="number" min="1" max="100" name="articulos[<?php echo $key ?>][cantidad]">
+					<div class="col s2 <?php if (!in_array($key, $relArEv)) echo "hide"; ?>" id="hide<?php echo $key ?>">
+						<input value="<?php if (in_array($key, $relArEv)) echo $cantidades[$key]; ?>" placeholder="Cantidad" id="cant<?php echo $key ?>" type="number" min="1" max="100" name="articulos[<?php echo $key ?>][cantidad]">
 					</div>
 				</div>
 
@@ -290,10 +313,12 @@
 				if ($('#check<?php echo $key ?>').is(':checked') )
 				{
 					$('#hide<?php echo $key ?>').removeClass('hide');
+					$('#cant<?php echo $key ?>').attr('required', 'true');
 				}
 				else
 				{
 					$('#hide<?php echo $key ?>').addClass('hide');
+					$('#cant<?php echo $key ?>').removeAttr('required');
 				}
 
 			});
