@@ -1,4 +1,7 @@
 {
+    "require": {
+        "ext-mbstring": "*",
+    },
     "name": "heroku/heroku-buildpack-php",
     "description": "Toolkit for starting a PHP application locally, with or without foreman, using the same config for PHP/HHVM and Apache2/Nginx as on Heroku",
     "keywords": ["heroku", "foreman", "php", "hhvm", "apache", "apache2", "nginx"],
@@ -15,9 +18,6 @@
         "bin/heroku-hhvm-nginx",
         "bin/heroku-php-apache2",
         "bin/heroku-php-nginx"
-    ],
-    "require": [{
-        "ext-mbstring": "*",
-    }]
+    ]
 
 }
