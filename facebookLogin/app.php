@@ -14,6 +14,8 @@
 	  'default_graph_version' => 'v2.3',
 	]);
 
+	var_dump($fb);
+
 
 
 	# Facebook PHP SDK v5: Check Login Status Example
