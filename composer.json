@@ -16,8 +16,7 @@
         "bin/heroku-php-apache2",
         "bin/heroku-php-nginx"
     ]
-}
-{
+
     "name": "facebook/php-sdk-v4",
     "description": "Facebook SDK for PHP",
     "keywords": ["facebook", "sdk"],
