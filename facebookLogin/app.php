@@ -49,6 +49,7 @@
 	echo $callback;
 	echo "que pedo3 ";
 	$loginUrl = $helper->getLoginUrl($callback);
+	echo $helper->getLoginUrl($callback);
 	echo $loginUrl;
 	var_dump($loginUrl);
 
