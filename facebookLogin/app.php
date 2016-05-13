@@ -42,10 +42,11 @@
 	}
 
 	$helper = $fb->getRedirectLoginHelper();
-	var_dump($helper);
+	//var_dump($helper);
 	//$permissions = ['email']; // optional
 	echo "que pedo2 ";
 	$callback = 'http://partydog.herokuapp.com/facebookLogin/login-callback.php';
+	echo $callback;
 	echo "que pedo3 ";
 	$loginUrl = $helper->getLoginUrl($callback);
 	echo $loginUrl;
