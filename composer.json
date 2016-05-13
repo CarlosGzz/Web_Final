@@ -16,8 +16,4 @@
         "bin/heroku-php-apache2",
         "bin/heroku-php-nginx"
     ]
-
-    "require" : {
-        "facebook/php-sdk-v4" : "~5.0"
-    }
 }
