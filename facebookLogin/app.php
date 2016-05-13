@@ -42,6 +42,7 @@
 	    exit;
 	  }
 	}
+	echo "mataame";
 
 	$helper = $fb->getRedirectLoginHelper();
 	$permissions = ['email']; // optional
