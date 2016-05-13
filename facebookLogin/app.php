@@ -48,7 +48,8 @@
 	$callback = 'http://partydog.herokuapp.com/facebookLogin/login-callback.php';
 	echo "que pedo3 ";
 	$loginUrl = $helper->getLoginUrl($callback);
-	echo "que pedo4";
+	echo $loginUrl;
+	var_dump($loginUrl);
 
 	echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 	echo "<a>link</a>";
